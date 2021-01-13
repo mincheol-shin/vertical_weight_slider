@@ -1,0 +1,18 @@
+name: vertical_weight_slider
+description: This package provides easy-to-use and scrollable vertical weight slider. Compatible with Android & iOS & Web.
+version: 1.0.0
+homepage:
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.20.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

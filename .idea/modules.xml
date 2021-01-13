@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/vertical_weight_slider.iml" filepath="$PROJECT_DIR$/vertical_weight_slider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/vertical_weight_slider_android.iml" filepath="$PROJECT_DIR$/android/vertical_weight_slider_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/example/android/vertical_weight_slider_example_android.iml" filepath="$PROJECT_DIR$/example/android/vertical_weight_slider_example_android.iml" />
+    </modules>
+  </component>
+</project>
