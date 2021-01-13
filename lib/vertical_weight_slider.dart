@@ -58,8 +58,12 @@ class _VerticalWeightSliderState extends State<VerticalWeightSlider> {
   @override
   void initState() {
     super.initState();
-    weight = [for (int i = widget.minimumWeight; i <= widget.maximumWeight * 10.0; i++) i];
-    _controller = FixedExtentScrollController(initialItem: (widget.initialWeight * 10).toInt());
+    weight = [
+      for (int i = widget.minimumWeight; i <= widget.maximumWeight * 10.0; i++)
+        i
+    ];
+    _controller = FixedExtentScrollController(
+        initialItem: (widget.initialWeight * 10).toInt());
   }
 
   @override
@@ -89,13 +93,29 @@ class _VerticalWeightSliderState extends State<VerticalWeightSlider> {
               physics: FixedExtentScrollPhysics(),
               perspective: 0.01,
               children: List<Widget>.generate(
-                [for (int i = widget.minimumWeight; i <= widget.maximumWeight * 10.0; i++) i].length,
-                    (index) => Center(
+                [
+                  for (int i = widget.minimumWeight;
+                      i <= widget.maximumWeight * 10.0;
+                      i++)
+                    i
+                ].length,
+                (index) => Center(
                     child: index % 10 == 0
-                        ? gradation(color: widget.gradationColor[0] ?? Colors.grey[500], width: widget.gradationWidth, height: widget.gradationHeight)
+                        ? gradation(
+                            color: widget.gradationColor[0] ?? Colors.grey[500],
+                            width: widget.gradationWidth,
+                            height: widget.gradationHeight)
                         : index % 5 == 0
-                        ? gradation(color: widget.gradationColor[1] ?? Colors.grey[400], width: widget.gradationWidth - 30.0, height: widget.gradationHeight - 1)
-                        : gradation(color: widget.gradationColor[2] ?? Colors.grey[200], width: widget.gradationWidth - 50.0, height: widget.gradationHeight - 1)),
+                            ? gradation(
+                                color: widget.gradationColor[1] ??
+                                    Colors.grey[400],
+                                width: widget.gradationWidth - 30.0,
+                                height: widget.gradationHeight - 1)
+                            : gradation(
+                                color: widget.gradationColor[2] ??
+                                    Colors.grey[200],
+                                width: widget.gradationWidth - 50.0,
+                                height: widget.gradationHeight - 1)),
               ),
             ),
             widget.selectedGradation ??

@@ -34,7 +34,11 @@ class _MyAppState extends State<MyApp> {
             VerticalWeightSlider(
               maximumWeight: 200,
               initialWeight: 0,
-              gradationColor: [Colors.grey[500], Colors.grey[400], Colors.grey[300]],
+              gradationColor: [
+                Colors.grey[500],
+                Colors.grey[400],
+                Colors.grey[300]
+              ],
               onChanged: (value) {
                 setState(() {
                   weight = value;

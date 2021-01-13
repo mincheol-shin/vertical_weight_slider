@@ -1,7 +1,7 @@
 name: vertical_weight_slider
 description: This package provides easy-to-use and scrollable vertical weight slider. Compatible with Android & iOS & Web.
 version: 1.0.0
-homepage:
+homepage: https://github.com/mincheol-shin/vertical_weight_slider
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
