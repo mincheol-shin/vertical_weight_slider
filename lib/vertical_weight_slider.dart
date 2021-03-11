@@ -2,19 +2,18 @@ import 'package:flutter/material.dart';
 
 class VerticalWeightSlider extends StatefulWidget {
   VerticalWeightSlider({
-    Key key,
+    Key? key,
     this.minimumWeight = 0,
     this.maximumWeight = 300,
     this.height = 250.0,
     this.gradationWidth = 130.0,
     this.gradationHeight = 3.0,
     this.selectedGradation,
-    this.gradationColor,
+    this.gradationColor = const [Colors.grey, Colors.grey, Colors.grey],
     this.initialWeight = 0.0,
     this.itemExtent = 15.0,
-    this.onChanged,
-  })  : assert(itemExtent > 0),
-        assert(gradationColor.length == 3),
+    required this.onChanged,
+  })   : assert(itemExtent > 0),
         super(key: key);
 
   /// Minimum weight that the slider can be scrolled
@@ -39,21 +38,21 @@ class VerticalWeightSlider extends StatefulWidget {
   final double itemExtent;
 
   /// Describes the configuration for a vertical weight slider.
-  final Widget selectedGradation;
+  final Widget? selectedGradation;
 
   /// On optional listener that's called when the centered item changes.
   final ValueChanged<double> onChanged;
 
   /// The color of the gradation.
-  final List<Color> gradationColor;
+  final List<Color?> gradationColor;
 
   @override
   _VerticalWeightSliderState createState() => _VerticalWeightSliderState();
 }
 
 class _VerticalWeightSliderState extends State<VerticalWeightSlider> {
-  FixedExtentScrollController _controller;
-  List weight;
+  late FixedExtentScrollController _controller;
+  late List weight;
 
   @override
   void initState() {
@@ -102,18 +101,16 @@ class _VerticalWeightSliderState extends State<VerticalWeightSlider> {
                 (index) => Center(
                     child: index % 10 == 0
                         ? gradation(
-                            color: widget.gradationColor[0] ?? Colors.grey[500],
+                            color: widget.gradationColor[0]!,
                             width: widget.gradationWidth,
                             height: widget.gradationHeight)
                         : index % 5 == 0
                             ? gradation(
-                                color: widget.gradationColor[1] ??
-                                    Colors.grey[400],
+                                color: widget.gradationColor[1]!,
                                 width: widget.gradationWidth - 30.0,
                                 height: widget.gradationHeight - 1)
                             : gradation(
-                                color: widget.gradationColor[2] ??
-                                    Colors.grey[200],
+                                color: widget.gradationColor[2]!,
                                 width: widget.gradationWidth - 50.0,
                                 height: widget.gradationHeight - 1)),
               ),
@@ -131,7 +128,8 @@ class _VerticalWeightSliderState extends State<VerticalWeightSlider> {
     );
   }
 
-  Widget gradation({Color color, double width, double height, int index}) {
+  Widget gradation(
+      {required Color color, required double width, required double height}) {
     return Container(
       height: height,
       width: width,
