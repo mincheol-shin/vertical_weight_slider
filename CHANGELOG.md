@@ -1,8 +1,16 @@
-## [2.0.0] - 2021-03-11
-- Stable null safety release.
+## 2.1.0
 
-## [1.0.0] - 2021-01-10
+* Added Object to pass arguments to other pages
+* Added `WeightPointer`
+* Added `PointerConfig`
+* Update README
+* Update example
+* `isVertical` was added (true by default)
 
-### Added
+## 2.0.0
 
-- Vertical Weight Slider creation
+* Stable null safety release.
+
+## 1.0.0
+
+* Vertical Weight Slider creation
