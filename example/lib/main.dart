@@ -19,7 +19,8 @@ class _MyAppState extends State<MyApp> {
 
     /// weight = weight * 10
     /// ex) _controller.jumpToItem(50) = 5kg
-    _controller =  FixedExtentScrollController(initialItem: (_weight * 10).toInt());
+    _controller =
+        FixedExtentScrollController(initialItem: (_weight * 10).toInt());
   }
 
   @override
@@ -27,6 +28,7 @@ class _MyAppState extends State<MyApp> {
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,14 +49,14 @@ class _MyAppState extends State<MyApp> {
           VerticalWeightSlider(
             controller: _controller,
             maxWeight: 300,
-              isVertical: false,
-              config: PointerConfig(
-                colors:[
-                  Colors.grey[500],
-                  Colors.grey[300],
-                  Colors.grey[200],
-                ],
-              ),
+            isVertical: false,
+            config: PointerConfig(
+              colors: [
+                Colors.grey[500],
+                Colors.grey[300],
+                Colors.grey[200],
+              ],
+            ),
             onChanged: (value) {
               setState(() {
                 _weight = value;
