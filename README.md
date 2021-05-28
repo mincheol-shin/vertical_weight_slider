@@ -36,7 +36,6 @@ import 'package:vertical_weight_slider/vertical_weight_slider.dart';
 <br>
 
 # Complete example
-```dart
 import 'package:flutter/material.dart';
 import 'package:vertical_weight_slider/vertical_weight_slider.dart';
 
@@ -50,15 +49,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late FixedExtentScrollController _controller;
-  double _weight = 50.0;
+  late WeightSliderController _controller;
+  double _weight = 50.5;
+  int _minWeight = 10;
+
   @override
   void initState() {
     super.initState();
-
-    /// weight = weight * 10
-    /// ex) _controller.jumpToItem(50) = 5kg
-    _controller =  FixedExtentScrollController(initialItem: (_weight * 10).toInt());
+    _controller =
+        WeightSliderController(initialWeight: _weight, minWeight: _minWeight);
   }
 
   @override
@@ -66,6 +65,7 @@ class _MyAppState extends State<MyApp> {
     _controller.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,15 +85,14 @@ class _MyAppState extends State<MyApp> {
           ),
           VerticalWeightSlider(
             controller: _controller,
-            maxWeight: 300,
-              isVertical: false,
-              config: PointerConfig(
-                colors:[
-                  Colors.grey[500],
-                  Colors.grey[300],
-                  Colors.grey[200],
-                ],
-              ),
+            maxWeight: 1000,
+            config: PointerConfig(
+              colors: [
+                Colors.grey[500],
+                Colors.grey[300],
+                Colors.grey[200],
+              ],
+            ),
             onChanged: (value) {
               setState(() {
                 _weight = value;
@@ -105,6 +104,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
 
 ```
 <br>
