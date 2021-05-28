@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_weight_slider/src/weight_pointer.dart';
+import '../vertical_weight_slider.dart';
 import 'pointer_config.dart';
 
 class VerticalWeightSlider extends StatelessWidget {
   VerticalWeightSlider({
     Key? key,
     required this.controller,
-    this.minWeight = 0,
     this.maxWeight = 300,
     this.height = 250.0,
     required this.config,
@@ -15,15 +15,11 @@ class VerticalWeightSlider extends StatelessWidget {
     required this.onChanged,
     this.isVertical = true,
   })  : assert(itemExtent >= 0),
-        assert(minWeight >= 0),
         assert(maxWeight >= 0),
         super(key: key);
 
   /// A controller for scroll views whose items have the same size.
-  FixedExtentScrollController controller;
-
-  /// Minimum weight that the slider can be scrolled
-  final int minWeight;
+  WeightSliderController controller;
 
   /// Maximum weight that the slider can be scrolled
   final int maxWeight;
@@ -51,7 +47,7 @@ class VerticalWeightSlider extends StatelessWidget {
     return NotificationListener<ScrollNotification>(
       onNotification: (ScrollNotification notification) {
         if (notification is ScrollUpdateNotification) {
-          onChanged(controller.selectedItem / 10);
+          onChanged((controller.selectedItem / 10) + controller.minWeight);
         }
         return false;
       },
@@ -69,8 +65,12 @@ class VerticalWeightSlider extends StatelessWidget {
                 physics: FixedExtentScrollPhysics(),
                 perspective: 0.01,
                 children: List<Widget>.generate(
-                  [for (int i = minWeight; i <= maxWeight * 10.0; i++) i]
-                      .length,
+                  [
+                    for (int i = controller.minWeight * 10;
+                        i <= maxWeight * 10.0;
+                        i++)
+                      i
+                  ].length,
                   (index) => Center(
                       child: index % 10 == 0
                           ? WeightPointer(

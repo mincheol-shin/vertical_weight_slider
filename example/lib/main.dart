@@ -11,16 +11,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late FixedExtentScrollController _controller;
-  double _weight = 50.0;
+  late WeightSliderController _controller;
+  double _weight = 50.5;
+  int _minWeight = 10;
+
   @override
   void initState() {
     super.initState();
-
-    /// weight = weight * 10
-    /// ex) _controller.jumpToItem(50) = 5kg
     _controller =
-        FixedExtentScrollController(initialItem: (_weight * 10).toInt());
+        WeightSliderController(initialWeight: _weight, minWeight: _minWeight);
   }
 
   @override
@@ -48,8 +47,7 @@ class _MyAppState extends State<MyApp> {
           ),
           VerticalWeightSlider(
             controller: _controller,
-            maxWeight: 300,
-            isVertical: false,
+            maxWeight: 1000,
             config: PointerConfig(
               colors: [
                 Colors.grey[500],

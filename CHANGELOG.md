@@ -1,10 +1,15 @@
+## 2.1.1
+
+* Added `WeightSliderController`
+* Fixed a bug related to `minWeight` and `maxWeight`. Thanks @desmeit.
+* Update README
+
 ## 2.1.0
 
 * Added Object to pass arguments to other pages
 * Added `WeightPointer`
 * Added `PointerConfig`
 * Update README
-* Update example
 * `isVertical` was added (true by default)
 
 ## 2.0.0
