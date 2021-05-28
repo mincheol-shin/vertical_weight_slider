@@ -36,6 +36,7 @@ import 'package:vertical_weight_slider/vertical_weight_slider.dart';
 <br>
 
 # Complete example
+```dart
 import 'package:flutter/material.dart';
 import 'package:vertical_weight_slider/vertical_weight_slider.dart';
 
