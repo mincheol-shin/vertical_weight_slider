@@ -10,11 +10,11 @@
 * Added `WeightPointer`
 * Added `PointerConfig`
 * Update README
-* `isVertical` was added (true by default)
+* `isVertical` was added. (true by default)
 
 ## 2.0.0
 
-* Stable null safety release.
+* Stable null safety release
 
 ## 1.0.0
 
