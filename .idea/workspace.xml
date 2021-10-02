@@ -20,14 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aae96d79-dcbd-44e2-8d7b-88b288eeeeca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Flutter/AppFrameworkInfo.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Flutter/AppFrameworkInfo.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/vertical_weight_slider_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/vertical_weight_slider_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/weight_slider_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/weight_slider_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,25 +86,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1866" height="243" key="GridCell.Tab.0.bottom" timestamp="1622201493360">
-      <screen x="-2560" y="25" width="2560" height="1415" />
+    <state width="1996" height="238" key="GridCell.Tab.0.bottom" timestamp="1633146698738">
+      <screen x="0" y="25" width="2560" height="1331" />
     </state>
-    <state width="1866" height="243" key="GridCell.Tab.0.bottom/0.25.2560.1319/-2560.25.2560.1415@-2560.25.2560.1415" timestamp="1622201493360" />
-    <state width="1016" height="377" key="GridCell.Tab.0.bottom/0.25.2560.1323/-2560.25.2560.1415@-2560.25.2560.1415" timestamp="1615430327892" />
-    <state width="1866" height="243" key="GridCell.Tab.0.center" timestamp="1622201493360">
-      <screen x="-2560" y="25" width="2560" height="1415" />
+    <state width="1996" height="238" key="GridCell.Tab.0.bottom/2560.-107.2560.1415/0.25.2560.1331@0.25.2560.1331" timestamp="1633146698738" />
+    <state width="1996" height="238" key="GridCell.Tab.0.center" timestamp="1633146698737">
+      <screen x="0" y="25" width="2560" height="1331" />
     </state>
-    <state width="1866" height="243" key="GridCell.Tab.0.center/0.25.2560.1319/-2560.25.2560.1415@-2560.25.2560.1415" timestamp="1622201493360" />
-    <state width="1016" height="377" key="GridCell.Tab.0.center/0.25.2560.1323/-2560.25.2560.1415@-2560.25.2560.1415" timestamp="1615430327891" />
-    <state width="1866" height="243" key="GridCell.Tab.0.left" timestamp="1622201493360">
-      <screen x="-2560" y="25" width="2560" height="1415" />
+    <state width="1996" height="238" key="GridCell.Tab.0.center/2560.-107.2560.1415/0.25.2560.1331@0.25.2560.1331" timestamp="1633146698737" />
+    <state width="1996" height="238" key="GridCell.Tab.0.left" timestamp="1633146698737">
+      <screen x="0" y="25" width="2560" height="1331" />
     </state>
-    <state width="1866" height="243" key="GridCell.Tab.0.left/0.25.2560.1319/-2560.25.2560.1415@-2560.25.2560.1415" timestamp="1622201493360" />
-    <state width="1016" height="377" key="GridCell.Tab.0.left/0.25.2560.1323/-2560.25.2560.1415@-2560.25.2560.1415" timestamp="1615430327891" />
-    <state width="1866" height="243" key="GridCell.Tab.0.right" timestamp="1622201493360">
-      <screen x="-2560" y="25" width="2560" height="1415" />
+    <state width="1996" height="238" key="GridCell.Tab.0.left/2560.-107.2560.1415/0.25.2560.1331@0.25.2560.1331" timestamp="1633146698737" />
+    <state width="1996" height="238" key="GridCell.Tab.0.right" timestamp="1633146698737">
+      <screen x="0" y="25" width="2560" height="1331" />
     </state>
-    <state width="1866" height="243" key="GridCell.Tab.0.right/0.25.2560.1319/-2560.25.2560.1415@-2560.25.2560.1415" timestamp="1622201493360" />
-    <state width="1016" height="377" key="GridCell.Tab.0.right/0.25.2560.1323/-2560.25.2560.1415@-2560.25.2560.1415" timestamp="1615430327892" />
+    <state width="1996" height="238" key="GridCell.Tab.0.right/2560.-107.2560.1415/0.25.2560.1331@0.25.2560.1331" timestamp="1633146698737" />
   </component>
 </project>

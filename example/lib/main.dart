@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Vertical Weight Slider Example"),
@@ -60,16 +61,6 @@ class _MyAppState extends State<MyApp> {
                 _weight = value;
               });
             },
-          ),
-          GestureDetector(
-            onTap: (){
-              _controller.jumpTo(45);
-            },
-            child: Container(
-              padding: EdgeInsets.all(12.0),
-              color: Colors.red,
-              child: Text("test"),
-            ),
           ),
         ],
       ),

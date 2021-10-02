@@ -1,3 +1,7 @@
+## 2.2.0
+
+* Added scroll function to the `WeightSliderController`. Thanks @jangjangbangbang
+
 ## 2.1.1
 
 * Added `WeightSliderController`

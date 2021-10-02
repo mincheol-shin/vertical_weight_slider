@@ -21,12 +21,15 @@ class WeightSliderController extends FixedExtentScrollController {
 
   /// Size of each child in the main axis
   final double itemExtent;
+
+  /// Changes which item index is centered in the controlled scroll view.
   @override
   void jumpToItem(int itemIndex) {
     super.jumpToItem((itemIndex - minWeight) * 10);
   }
+
   @override
   void jumpTo(double value) {
-    super.jumpTo(value);
+    super.jumpTo(((itemExtent * (value - minWeight)) * 10));
   }
 }
