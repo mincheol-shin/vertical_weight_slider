@@ -61,6 +61,16 @@ class _MyAppState extends State<MyApp> {
               });
             },
           ),
+          GestureDetector(
+            onTap: (){
+              _controller.jumpTo(45);
+            },
+            child: Container(
+              padding: EdgeInsets.all(12.0),
+              color: Colors.red,
+              child: Text("test"),
+            ),
+          ),
         ],
       ),
     );

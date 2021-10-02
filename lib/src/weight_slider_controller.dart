@@ -4,7 +4,9 @@ class WeightSliderController extends FixedExtentScrollController {
   WeightSliderController({
     this.initialWeight = 0,
     this.minWeight = 0,
+    this.itemExtent = 15.0,
   })  : assert(minWeight >= 0),
+        assert(itemExtent >= 0),
         super(
           initialItem: ((initialWeight - minWeight) * 10).toInt(),
         );
@@ -16,4 +18,15 @@ class WeightSliderController extends FixedExtentScrollController {
 
   /// Minimum weight that the slider can be scrolled
   final int minWeight;
+
+  /// Size of each child in the main axis
+  final double itemExtent;
+  @override
+  void jumpToItem(int itemIndex) {
+    super.jumpToItem((itemIndex - minWeight) * 10);
+  }
+  @override
+  void jumpTo(double value) {
+    super.jumpTo(value);
+  }
 }

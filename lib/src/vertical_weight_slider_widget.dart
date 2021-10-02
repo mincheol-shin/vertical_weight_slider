@@ -10,16 +10,15 @@ class VerticalWeightSlider extends StatelessWidget {
     this.maxWeight = 300,
     this.height = 250.0,
     required this.config,
-    this.itemExtent = 15.0,
     this.indicator,
     required this.onChanged,
     this.isVertical = true,
-  })  : assert(itemExtent >= 0),
+  })  :
         assert(maxWeight >= 0),
         super(key: key);
 
   /// A controller for scroll views whose items have the same size.
-  WeightSliderController controller;
+  final WeightSliderController controller;
 
   /// Maximum weight that the slider can be scrolled
   final int maxWeight;
@@ -30,8 +29,6 @@ class VerticalWeightSlider extends StatelessWidget {
   /// Pointer configuration
   final PointerConfig config;
 
-  /// Size of each child in the main axis
-  final double itemExtent;
 
   /// Describes the configuration for a vertical weight slider.
   final Widget? indicator;
@@ -59,33 +56,19 @@ class VerticalWeightSlider extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               ListWheelScrollView(
-                itemExtent: itemExtent,
+                itemExtent: controller.itemExtent,
                 diameterRatio: 3.0,
                 controller: controller,
                 physics: FixedExtentScrollPhysics(),
                 perspective: 0.01,
                 children: List<Widget>.generate(
-                  [
-                    for (int i = controller.minWeight * 10;
-                        i <= maxWeight * 10.0;
-                        i++)
-                      i
-                  ].length,
+                  [for (int i = controller.minWeight * 10; i <= maxWeight * 10.0; i++) i].length,
                   (index) => Center(
                       child: index % 10 == 0
-                          ? WeightPointer(
-                              color: config.colors[0]!,
-                              width: config.width,
-                              height: config.height)
+                          ? WeightPointer(color: config.colors[0]!, width: config.width, height: config.height)
                           : index % 5 == 0
-                              ? WeightPointer(
-                                  color: config.colors[1]!,
-                                  width: config.width - config.gap,
-                                  height: config.height - 1)
-                              : WeightPointer(
-                                  color: config.colors[2]!,
-                                  width: config.width - (config.gap * 2),
-                                  height: config.height - 1)),
+                              ? WeightPointer(color: config.colors[1]!, width: config.width - config.gap, height: config.height - 1)
+                              : WeightPointer(color: config.colors[2]!, width: config.width - (config.gap * 2), height: config.height - 1)),
                 ),
               ),
               indicator ??
