@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     _controller =
-        WeightSliderController(initialWeight: _weight, minWeight: _minWeight);
+        WeightSliderController(initialWeight: _weight, minWeight: _minWeight, isDoubleInterval: false);
   }
 
   @override
@@ -30,7 +30,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Vertical Weight Slider Example"),

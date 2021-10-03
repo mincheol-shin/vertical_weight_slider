@@ -42,7 +42,8 @@ class VerticalWeightSlider extends StatelessWidget {
     return NotificationListener<ScrollNotification>(
       onNotification: (ScrollNotification notification) {
         if (notification is ScrollUpdateNotification) {
-          onChanged((controller.selectedItem / 10) + controller.minWeight);
+          onChanged((controller.selectedItem / controller.interval) +
+              controller.minWeight);
         }
         return false;
       },
@@ -61,8 +62,8 @@ class VerticalWeightSlider extends StatelessWidget {
                 perspective: 0.01,
                 children: List<Widget>.generate(
                   [
-                    for (int i = controller.minWeight * 10;
-                        i <= maxWeight * 10.0;
+                    for (int i = controller.minWeight * controller.interval;
+                        i <= maxWeight * controller.interval;
                         i++)
                       i
                   ].length,

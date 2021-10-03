@@ -2,13 +2,21 @@ import 'package:flutter/cupertino.dart';
 
 class WeightSliderController extends FixedExtentScrollController {
   WeightSliderController({
-    this.initialWeight = 0,
-    this.minWeight = 0,
-    this.itemExtent = 15.0,
-  })  : assert(minWeight >= 0),
+    double initialWeight = 0.0,
+    int minWeight = 0,
+    double itemExtent = 15.0,
+    bool isDoubleInterval = true,
+  })  : this.initialWeight = initialWeight,
+        this.minWeight = minWeight,
+        this.itemExtent = itemExtent,
+        this.isDoubleInterval = isDoubleInterval,
+        this.interval = isDoubleInterval == true ? 10 : 1,
+        assert(minWeight >= 0),
         assert(itemExtent >= 0),
         super(
-          initialItem: ((initialWeight - minWeight) * 10).toInt(),
+          initialItem: ((initialWeight - minWeight) *
+                  (isDoubleInterval == true ? 10 : 1.0))
+              .toInt(),
         );
 
   /// The page to show when first creating the scroll view.
@@ -22,14 +30,22 @@ class WeightSliderController extends FixedExtentScrollController {
   /// Size of each child in the main axis
   final double itemExtent;
 
+  /// Slider scale type
+  final bool isDoubleInterval;
+
+  /// Gap value according to scale type.
+  /// double : 0.1
+  /// int : 1.0
+  final int interval;
+
   /// Changes which item index is centered in the controlled scroll view.
   @override
   void jumpToItem(int itemIndex) {
-    super.jumpToItem((itemIndex - minWeight) * 10);
+    super.jumpToItem((itemIndex - minWeight) * interval);
   }
 
   @override
   void jumpTo(double value) {
-    super.jumpTo(((itemExtent * (value - minWeight)) * 10));
+    super.jumpTo(((itemExtent * (value - minWeight)) * interval));
   }
 }

@@ -1,3 +1,8 @@
+## 2.3.0
+
+* Added the ability to scroll at int interval
+
+
 ## 2.2.0
 
 * Added scroll function to the `WeightSliderController`. Thanks @jangjangbangbang
