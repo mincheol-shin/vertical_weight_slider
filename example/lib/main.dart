@@ -48,7 +48,7 @@ class _MyAppState extends State<MyApp> {
           VerticalWeightSlider(
             controller: _controller,
             maxWeight: 1000,
-            config: PointerConfig(
+            decoration: PointerDecoration(
               colors: [
                 Colors.grey[500],
                 Colors.grey[300],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PointerConfig {
-  PointerConfig({
+class PointerDecoration {
+  PointerDecoration({
     this.width = 130.0,
     this.height = 3.0,
     this.colors = const [Colors.grey, Colors.grey, Colors.grey],

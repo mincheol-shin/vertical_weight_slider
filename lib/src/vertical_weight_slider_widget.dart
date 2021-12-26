@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_weight_slider/src/weight_pointer.dart';
 import '../vertical_weight_slider.dart';
-import 'pointer_config.dart';
 
 class VerticalWeightSlider extends StatelessWidget {
   VerticalWeightSlider({
@@ -9,7 +8,7 @@ class VerticalWeightSlider extends StatelessWidget {
     required this.controller,
     this.maxWeight = 300,
     this.height = 250.0,
-    required this.config,
+    required this.decoration,
     this.indicator,
     required this.onChanged,
     this.isVertical = true,
@@ -26,7 +25,7 @@ class VerticalWeightSlider extends StatelessWidget {
   final double height;
 
   /// Pointer configuration
-  final PointerConfig config;
+  final PointerDecoration decoration;
 
   /// Describes the configuration for a vertical weight slider.
   final Widget? indicator;
@@ -70,18 +69,18 @@ class VerticalWeightSlider extends StatelessWidget {
                   (index) => Center(
                       child: index % 10 == 0
                           ? WeightPointer(
-                              color: config.colors[0]!,
-                              width: config.width,
-                              height: config.height)
+                              color: decoration.colors[0]!,
+                              width: decoration.width,
+                              height: decoration.height)
                           : index % 5 == 0
                               ? WeightPointer(
-                                  color: config.colors[1]!,
-                                  width: config.width - config.gap,
-                                  height: config.height - 1)
+                                  color: decoration.colors[1]!,
+                                  width: decoration.width - decoration.gap,
+                                  height: decoration.height - 1)
                               : WeightPointer(
-                                  color: config.colors[2]!,
-                                  width: config.width - (config.gap * 2),
-                                  height: config.height - 1)),
+                                  color: decoration.colors[2]!,
+                                  width: decoration.width - (decoration.gap * 2),
+                                  height: decoration.height - 1)),
                 ),
               ),
               indicator ??
