@@ -1,3 +1,14 @@
+## 2.4.0
+
+* Improved scroll performance.
+* Simplify interval parameter of WeightSliderController
+* Simplify colors parameter of PointerDecoration
+* Update the direction of progress in landscape mode
+* Update WeightSliderController to support two decimal places
+* Update README
+* Update example
+
+
 ## 2.3.0
 
 * Added the ability to scroll at int interval
