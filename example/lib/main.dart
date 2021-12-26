@@ -47,14 +47,8 @@ class _MyAppState extends State<MyApp> {
           ),
           VerticalWeightSlider(
             controller: _controller,
+            isVertical: false,
             maxWeight: 1000,
-            decoration: PointerDecoration(
-              colors: [
-                Colors.grey[500],
-                Colors.grey[300],
-                Colors.grey[200],
-              ],
-            ),
             onChanged: (value) {
               setState(() {
                 _weight = value;

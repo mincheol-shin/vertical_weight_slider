@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WeightPointer extends StatelessWidget {
-  WeightPointer({
+  const WeightPointer({
     Key? key,
     this.width = 130.0,
     this.height = 3.0,
@@ -23,7 +23,7 @@ class WeightPointer extends StatelessWidget {
       height: height,
       width: width,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16.0),
+        borderRadius: const BorderRadius.all(Radius.circular(16)),
         color: color,
       ),
     );

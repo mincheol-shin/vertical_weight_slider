@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:vertical_weight_slider/src/weight_pointer.dart';
+import 'package:vertical_weight_slider/src/widgets/weight_pointer.dart';
 import '../vertical_weight_slider.dart';
 
 class VerticalWeightSlider extends StatelessWidget {
-  VerticalWeightSlider({
+  const VerticalWeightSlider({
     Key? key,
     required this.controller,
     this.maxWeight = 300,
     this.height = 250.0,
-    required this.decoration,
+     this.decoration = const PointerDecoration(),
     this.indicator,
     required this.onChanged,
     this.isVertical = true,
@@ -49,7 +49,7 @@ class VerticalWeightSlider extends StatelessWidget {
       child: SizedBox(
         height: height,
         child: RotatedBox(
-          quarterTurns: isVertical ? 0 : 1,
+          quarterTurns: isVertical ? 0 : 3,
           child: Stack(
             alignment: Alignment.center,
             children: [
@@ -57,7 +57,7 @@ class VerticalWeightSlider extends StatelessWidget {
                 itemExtent: controller.itemExtent,
                 diameterRatio: 3.0,
                 controller: controller,
-                physics: FixedExtentScrollPhysics(),
+                physics: const FixedExtentScrollPhysics(),
                 perspective: 0.01,
                 children: List<Widget>.generate(
                   [
@@ -69,16 +69,16 @@ class VerticalWeightSlider extends StatelessWidget {
                   (index) => Center(
                       child: index % 10 == 0
                           ? WeightPointer(
-                              color: decoration.colors[0]!,
+                              color: decoration.colors[0],
                               width: decoration.width,
                               height: decoration.height)
                           : index % 5 == 0
                               ? WeightPointer(
-                                  color: decoration.colors[1]!,
+                                  color: decoration.colors[1],
                                   width: decoration.width - decoration.gap,
                                   height: decoration.height - 1)
                               : WeightPointer(
-                                  color: decoration.colors[2]!,
+                                  color: decoration.colors[2],
                                   width: decoration.width - (decoration.gap * 2),
                                   height: decoration.height - 1)),
                 ),
