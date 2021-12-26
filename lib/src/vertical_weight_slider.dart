@@ -64,13 +64,7 @@ class VerticalWeightSlider extends StatelessWidget {
                 onChanged((index / controller.interval) + controller.minWeight);
               },
             ),
-            indicator ??
-                Container(
-                  height: 3.0,
-                  width: 200.0,
-                  alignment: Alignment.centerLeft,
-                  color: Colors.red[300],
-                ),
+            indicator ?? const SizedBox(),
           ],
         ),
       ),
