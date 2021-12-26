@@ -8,7 +8,7 @@ class VerticalWeightSlider extends StatelessWidget {
     required this.controller,
     this.maxWeight = 300,
     this.height = 250.0,
-     this.decoration = const PointerDecoration(),
+    this.decoration = const PointerDecoration(),
     this.indicator,
     required this.onChanged,
     this.isVertical = true,
@@ -41,8 +41,7 @@ class VerticalWeightSlider extends StatelessWidget {
     return NotificationListener<ScrollNotification>(
       onNotification: (ScrollNotification notification) {
         if (notification is ScrollUpdateNotification) {
-          onChanged((controller.selectedItem / controller.interval) +
-              controller.minWeight);
+          onChanged((controller.selectedItem / controller.interval) + controller.minWeight);
         }
         return false;
       },
@@ -60,27 +59,13 @@ class VerticalWeightSlider extends StatelessWidget {
                 physics: const FixedExtentScrollPhysics(),
                 perspective: 0.01,
                 children: List<Widget>.generate(
-                  [
-                    for (int i = controller.minWeight * controller.interval;
-                        i <= maxWeight * controller.interval;
-                        i++)
-                      i
-                  ].length,
+                  [for (int i = controller.minWeight * controller.interval; i <= maxWeight * controller.interval; i++) i].length,
                   (index) => Center(
                       child: index % 10 == 0
-                          ? WeightPointer(
-                              color: decoration.colors[0],
-                              width: decoration.width,
-                              height: decoration.height)
+                          ? WeightPointer(color: decoration.largeColor, width: decoration.width, height: decoration.height)
                           : index % 5 == 0
-                              ? WeightPointer(
-                                  color: decoration.colors[1],
-                                  width: decoration.width - decoration.gap,
-                                  height: decoration.height - 1)
-                              : WeightPointer(
-                                  color: decoration.colors[2],
-                                  width: decoration.width - (decoration.gap * 2),
-                                  height: decoration.height - 1)),
+                              ? WeightPointer(color: decoration.mediumColor, width: decoration.width - decoration.gap, height: decoration.height - 1)
+                              : WeightPointer(color: decoration.smallColor, width: decoration.width - (decoration.gap * 2), height: decoration.height - 1)),
                 ),
               ),
               indicator ??
