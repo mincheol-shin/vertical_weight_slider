@@ -12,12 +12,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late WeightSliderController _controller;
-  double _weight = 50.0;
+  double _weight = 30.0;
 
   @override
   void initState() {
     super.initState();
-    _controller = WeightSliderController(initialWeight: _weight, minWeight: 10, isDoubleInterval: false);
+    _controller = WeightSliderController(initialWeight: _weight, minWeight: 0, interval: 0.1);
   }
 
   @override
@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
             height: 200.0,
             alignment: Alignment.center,
             child: Text(
-              "$_weight kg",
+              "${_weight.toStringAsFixed(1)} kg",
               style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w500),
             ),
           ),
@@ -53,7 +53,7 @@ class _MyAppState extends State<MyApp> {
               smallColor: Color(0xFFF0F0F0),
               gap: 30.0,
             ),
-            onChanged: (value) {
+            onChanged: (double value) {
               setState(() {
                 _weight = value;
               });
