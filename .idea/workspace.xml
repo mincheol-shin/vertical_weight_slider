@@ -21,12 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aae96d79-dcbd-44e2-8d7b-88b288eeeeca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/vertical_weight_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/vertical_weight_slider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/weight_slider_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/weight_slider_controller.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,25 +85,25 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2036" height="261" key="GridCell.Tab.0.bottom" timestamp="1640510493853">
+    <state width="2036" height="261" key="GridCell.Tab.0.bottom" timestamp="1640512001968">
       <screen x="-2560" y="157" width="2560" height="1415" />
     </state>
-    <state width="2036" height="261" key="GridCell.Tab.0.bottom/0.25.2560.1328/-2560.157.2560.1415@-2560.157.2560.1415" timestamp="1640510493853" />
+    <state width="2036" height="261" key="GridCell.Tab.0.bottom/0.25.2560.1328/-2560.157.2560.1415@-2560.157.2560.1415" timestamp="1640512001968" />
     <state width="1996" height="238" key="GridCell.Tab.0.bottom/2560.-107.2560.1415/0.25.2560.1331@0.25.2560.1331" timestamp="1633184201492" />
-    <state width="2036" height="261" key="GridCell.Tab.0.center" timestamp="1640510493853">
+    <state width="2036" height="261" key="GridCell.Tab.0.center" timestamp="1640512001968">
       <screen x="-2560" y="157" width="2560" height="1415" />
     </state>
-    <state width="2036" height="261" key="GridCell.Tab.0.center/0.25.2560.1328/-2560.157.2560.1415@-2560.157.2560.1415" timestamp="1640510493853" />
+    <state width="2036" height="261" key="GridCell.Tab.0.center/0.25.2560.1328/-2560.157.2560.1415@-2560.157.2560.1415" timestamp="1640512001968" />
     <state width="1996" height="238" key="GridCell.Tab.0.center/2560.-107.2560.1415/0.25.2560.1331@0.25.2560.1331" timestamp="1633184201492" />
-    <state width="2036" height="261" key="GridCell.Tab.0.left" timestamp="1640510493853">
+    <state width="2036" height="261" key="GridCell.Tab.0.left" timestamp="1640512001968">
       <screen x="-2560" y="157" width="2560" height="1415" />
     </state>
-    <state width="2036" height="261" key="GridCell.Tab.0.left/0.25.2560.1328/-2560.157.2560.1415@-2560.157.2560.1415" timestamp="1640510493853" />
+    <state width="2036" height="261" key="GridCell.Tab.0.left/0.25.2560.1328/-2560.157.2560.1415@-2560.157.2560.1415" timestamp="1640512001968" />
     <state width="1996" height="238" key="GridCell.Tab.0.left/2560.-107.2560.1415/0.25.2560.1331@0.25.2560.1331" timestamp="1633184201491" />
-    <state width="2036" height="261" key="GridCell.Tab.0.right" timestamp="1640510493853">
+    <state width="2036" height="261" key="GridCell.Tab.0.right" timestamp="1640512001968">
       <screen x="-2560" y="157" width="2560" height="1415" />
     </state>
-    <state width="2036" height="261" key="GridCell.Tab.0.right/0.25.2560.1328/-2560.157.2560.1415@-2560.157.2560.1415" timestamp="1640510493853" />
+    <state width="2036" height="261" key="GridCell.Tab.0.right/0.25.2560.1328/-2560.157.2560.1415@-2560.157.2560.1415" timestamp="1640512001968" />
     <state width="1996" height="238" key="GridCell.Tab.0.right/2560.-107.2560.1415/0.25.2560.1331@0.25.2560.1331" timestamp="1633184201492" />
     <state x="-1856" y="411" key="run.anything.popup" timestamp="1640508256938">
       <screen x="-2560" y="157" width="2560" height="1415" />
