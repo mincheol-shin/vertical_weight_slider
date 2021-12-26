@@ -22,7 +22,6 @@
     <list default="true" id="aae96d79-dcbd-44e2-8d7b-88b288eeeeca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/models/pointer_decoration.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/models/pointer_decoration.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/vertical_weight_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/vertical_weight_slider.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

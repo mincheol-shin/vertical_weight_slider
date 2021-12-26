@@ -38,45 +38,40 @@ class VerticalWeightSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NotificationListener<ScrollNotification>(
-      onNotification: (ScrollNotification notification) {
-        if (notification is ScrollUpdateNotification) {
-          onChanged((controller.selectedItem / controller.interval) + controller.minWeight);
-        }
-        return false;
-      },
-      child: SizedBox(
-        height: height,
-        child: RotatedBox(
-          quarterTurns: isVertical ? 0 : 3,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              ListWheelScrollView(
-                itemExtent: controller.itemExtent,
-                diameterRatio: 3.0,
-                controller: controller,
-                physics: const FixedExtentScrollPhysics(),
-                perspective: 0.01,
-                children: List<Widget>.generate(
-                  [for (int i = controller.minWeight * controller.interval; i <= maxWeight * controller.interval; i++) i].length,
-                  (index) => Center(
-                      child: index % 10 == 0
-                          ? WeightPointer(color: decoration.largeColor, width: decoration.width, height: decoration.height)
-                          : index % 5 == 0
-                              ? WeightPointer(color: decoration.mediumColor, width: decoration.width - decoration.gap, height: decoration.height - 1)
-                              : WeightPointer(color: decoration.smallColor, width: decoration.width - (decoration.gap * 2), height: decoration.height - 1)),
-                ),
+    return SizedBox(
+      height: height,
+      child: RotatedBox(
+        quarterTurns: isVertical ? 0 : 3,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            ListWheelScrollView(
+              itemExtent: controller.itemExtent,
+              diameterRatio: 3.0,
+              controller: controller,
+              physics: const FixedExtentScrollPhysics(),
+              perspective: 0.01,
+              children: List<Widget>.generate(
+                [for (int i = controller.minWeight * controller.interval; i <= maxWeight * controller.interval; i++) i].length,
+                (index) => Center(
+                    child: index % 10 == 0
+                        ? WeightPointer(color: decoration.largeColor, width: decoration.width, height: decoration.height)
+                        : index % 5 == 0
+                            ? WeightPointer(color: decoration.mediumColor, width: decoration.width - decoration.gap, height: decoration.height - 1)
+                            : WeightPointer(color: decoration.smallColor, width: decoration.width - (decoration.gap * 2), height: decoration.height - 1)),
               ),
-              indicator ??
-                  Container(
-                    height: 3.0,
-                    width: 200.0,
-                    alignment: Alignment.centerLeft,
-                    color: Colors.red[300],
-                  ),
-            ],
-          ),
+              onSelectedItemChanged: (index){
+                onChanged((index / controller.interval) + controller.minWeight);
+              },
+            ),
+            indicator ??
+                Container(
+                  height: 3.0,
+                  width: 200.0,
+                  alignment: Alignment.centerLeft,
+                  color: Colors.red[300],
+                ),
+          ],
         ),
       ),
     );

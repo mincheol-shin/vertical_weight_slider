@@ -12,14 +12,12 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   late WeightSliderController _controller;
-  double _weight = 50.5;
-  int _minWeight = 10;
+  double _weight = 50.0;
 
   @override
   void initState() {
     super.initState();
-    _controller =
-        WeightSliderController(initialWeight: _weight, minWeight: _minWeight, isDoubleInterval: false);
+    _controller = WeightSliderController(initialWeight: _weight, minWeight: 10, isDoubleInterval: false);
   }
 
   @override
