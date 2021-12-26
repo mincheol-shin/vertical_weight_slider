@@ -10,7 +10,6 @@ class WeightSliderController extends FixedExtentScrollController {
         this.minWeight = minWeight,
         this.itemExtent = itemExtent,
         this.isDoubleInterval = isDoubleInterval,
-        this.interval = isDoubleInterval == true ? 10 : 1,
         assert(minWeight >= 0),
         assert(itemExtent >= 0),
         super(
@@ -36,16 +35,18 @@ class WeightSliderController extends FixedExtentScrollController {
   /// Gap value according to scale type.
   /// double : 0.1
   /// int : 1.0
-  final int interval;
+  int getInterval(){
+    return isDoubleInterval ? 10 : 1;
+  }
 
   /// Changes which item index is centered in the controlled scroll view.
   @override
   void jumpToItem(int itemIndex) {
-    super.jumpToItem((itemIndex - minWeight) * interval);
+    super.jumpToItem((itemIndex - minWeight) * getInterval());
   }
 
   @override
   void jumpTo(double value) {
-    super.jumpTo(((itemExtent * (value - minWeight)) * interval));
+    super.jumpTo(((itemExtent * (value - minWeight)) * getInterval()));
   }
 }

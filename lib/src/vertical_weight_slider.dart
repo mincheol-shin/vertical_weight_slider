@@ -52,7 +52,7 @@ class VerticalWeightSlider extends StatelessWidget {
               physics: const FixedExtentScrollPhysics(),
               perspective: 0.01,
               children: List<Widget>.generate(
-                [for (int i = controller.minWeight * controller.interval; i <= maxWeight * controller.interval; i++) i].length,
+                [for (int i = controller.minWeight * controller.getInterval(); i <= maxWeight * controller.getInterval(); i++) i].length,
                 (index) => Center(
                     child: index % 10 == 0
                         ? WeightPointer(color: decoration.largeColor, width: decoration.width, height: decoration.height)
@@ -60,8 +60,8 @@ class VerticalWeightSlider extends StatelessWidget {
                             ? WeightPointer(color: decoration.mediumColor, width: decoration.width - decoration.gap, height: decoration.height - 1)
                             : WeightPointer(color: decoration.smallColor, width: decoration.width - (decoration.gap * 2), height: decoration.height - 1)),
               ),
-              onSelectedItemChanged: (index){
-                onChanged((index / controller.interval) + controller.minWeight);
+              onSelectedItemChanged: (index) {
+                onChanged((index / controller.getInterval()) + controller.minWeight);
               },
             ),
             indicator ?? const SizedBox(),
