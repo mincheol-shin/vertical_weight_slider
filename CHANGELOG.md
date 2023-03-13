@@ -1,3 +1,8 @@
+## 2.5.0
+
+* Add a new haptic constructor. Thanks @desmeit. (#7)
+
+
 ## 2.4.0
 
 * Improved scroll performance.
