@@ -37,22 +37,22 @@ class _MyAppState extends State<MyApp> {
       body: Column(
         children: [
           Container(
-            height: 200.0,
+            height: 200,
             alignment: Alignment.center,
             child: Text(
               "${_weight.toStringAsFixed(1)} kg",
-              style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
             ),
           ),
           VerticalWeightSlider(
             controller: _controller,
             decoration: const PointerDecoration(
-              width: 130.0,
-              height: 3.0,
+              width: 130,
+              height: 3,
               largeColor: Color(0xFF898989),
               mediumColor: Color(0xFFC5C5C5),
               smallColor: Color(0xFFF0F0F0),
-              gap: 30.0,
+              gap: 30,
             ),
             onChanged: (double value) {
               setState(() {
@@ -60,8 +60,8 @@ class _MyAppState extends State<MyApp> {
               });
             },
             indicator: Container(
-              height: 3.0,
-              width: 200.0,
+              height: 3,
+              width: 200,
               alignment: Alignment.centerLeft,
               color: Colors.red[300],
             ),

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_weight_slider/src/widgets/weight_pointer.dart';
 import '../vertical_weight_slider.dart';
+import 'vertical_weight_slider_constants.dart';
 
 class VerticalWeightSlider extends StatelessWidget {
   const VerticalWeightSlider({
     Key? key,
     required this.controller,
     this.maxWeight = 300,
-    this.height = 250.0,
+    this.height = 250,
     this.decoration = const PointerDecoration(),
     this.indicator,
     required this.onChanged,
     this.isVertical = true,
+    this.haptic = Haptic.none,
   })  : assert(maxWeight >= 0),
         super(key: key);
 
@@ -35,6 +37,9 @@ class VerticalWeightSlider extends StatelessWidget {
 
   /// A Boolean value that indicates whether the slider is vertical.
   final bool isVertical;
+
+  /// Allows access to the haptic feedback interface on the device.
+  final Haptic haptic;
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +67,7 @@ class VerticalWeightSlider extends StatelessWidget {
               ),
               onSelectedItemChanged: (index) {
                 onChanged((index / controller.getIntervalToInt()) + controller.minWeight);
+                haptic.run();
               },
             ),
             indicator ?? const SizedBox(),
