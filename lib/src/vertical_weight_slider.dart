@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_weight_slider/src/widgets/weight_pointer.dart';
 import '../vertical_weight_slider.dart';
-import 'vertical_weight_slider_constants.dart';
 
 class VerticalWeightSlider extends StatelessWidget {
   const VerticalWeightSlider({
