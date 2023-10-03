@@ -1,3 +1,8 @@
+## 2.5.1
+
+* Added `diameterRatio` attribute.
+
+
 ## 2.5.0
 
 * Add a new haptic constructor. Thanks @desmeit. (#7)
