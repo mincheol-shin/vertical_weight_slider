@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vertical_weight_slider/src/widgets/weight_pointer.dart';
+
 import '../vertical_weight_slider.dart';
 
 class VerticalWeightSlider extends StatelessWidget {
@@ -13,6 +14,7 @@ class VerticalWeightSlider extends StatelessWidget {
     required this.onChanged,
     this.isVertical = true,
     this.haptic = Haptic.none,
+    this.diameterRatio = 3.0,
   })  : assert(maxWeight >= 0),
         super(key: key);
 
@@ -40,6 +42,9 @@ class VerticalWeightSlider extends StatelessWidget {
   /// Allows access to the haptic feedback interface on the device.
   final Haptic haptic;
 
+  /// A ratio between the diameter of the cylinder and the viewport's size in the main axis.
+  final double diameterRatio;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -51,21 +56,37 @@ class VerticalWeightSlider extends StatelessWidget {
           children: [
             ListWheelScrollView(
               itemExtent: controller.itemExtent,
-              diameterRatio: 3.0,
+              diameterRatio: diameterRatio,
               controller: controller,
               physics: const FixedExtentScrollPhysics(),
               perspective: 0.01,
               children: List<Widget>.generate(
-                [for (int i = controller.minWeight * controller.getIntervalToInt(); i <= maxWeight * controller.getIntervalToInt(); i++) i].length,
+                [
+                  for (int i =
+                          controller.minWeight * controller.getIntervalToInt();
+                      i <= maxWeight * controller.getIntervalToInt();
+                      i++)
+                    i
+                ].length,
                 (index) => Center(
                     child: index % 10 == 0
-                        ? WeightPointer(color: decoration.largeColor, width: decoration.width, height: decoration.height)
+                        ? WeightPointer(
+                            color: decoration.largeColor,
+                            width: decoration.width,
+                            height: decoration.height)
                         : index % 5 == 0
-                            ? WeightPointer(color: decoration.mediumColor, width: decoration.width - decoration.gap, height: decoration.height - 1)
-                            : WeightPointer(color: decoration.smallColor, width: decoration.width - (decoration.gap * 2), height: decoration.height - 1)),
+                            ? WeightPointer(
+                                color: decoration.mediumColor,
+                                width: decoration.width - decoration.gap,
+                                height: decoration.height - 1)
+                            : WeightPointer(
+                                color: decoration.smallColor,
+                                width: decoration.width - (decoration.gap * 2),
+                                height: decoration.height - 1)),
               ),
               onSelectedItemChanged: (index) {
-                onChanged((index / controller.getIntervalToInt()) + controller.minWeight);
+                onChanged((index / controller.getIntervalToInt()) +
+                    controller.minWeight);
                 haptic.run();
               },
             ),
