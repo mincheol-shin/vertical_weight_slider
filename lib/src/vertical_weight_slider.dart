@@ -8,7 +8,6 @@ class VerticalWeightSlider extends StatelessWidget {
   const VerticalWeightSlider({
     Key? key,
     required this.controller,
-    this.maxWeight = 300,
     this.height = 250,
     this.decoration = const PointerDecoration(),
     this.indicator,
@@ -16,14 +15,10 @@ class VerticalWeightSlider extends StatelessWidget {
     this.isVertical = true,
     this.haptic = Haptic.none,
     this.diameterRatio = 3.0,
-  })  : assert(maxWeight >= 0),
-        super(key: key);
+  }) : super(key: key);
 
   /// A controller for scroll views whose items have the same size.
   final WeightSliderController controller;
-
-  /// Maximum weight that the slider can be scrolled
-  final int maxWeight;
 
   /// If non-null, requires the child to have exactly this height.
   final double height;
@@ -46,6 +41,9 @@ class VerticalWeightSlider extends StatelessWidget {
   /// A ratio between the diameter of the cylinder and the viewport's size in the main axis.
   final double diameterRatio;
 
+  double selectedWeight(int index) =>
+      controller.minWeight + (index * controller.interval);
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -62,13 +60,7 @@ class VerticalWeightSlider extends StatelessWidget {
               physics: const FixedExtentScrollPhysics(),
               perspective: 0.01,
               children: List<Widget>.generate(
-                [
-                  for (int i =
-                          controller.minWeight * controller.getIntervalToInt();
-                      i <= maxWeight * controller.getIntervalToInt();
-                      i++)
-                    i
-                ].length,
+                controller.markCount,
                 (index) => Center(
                   child: index % 10 == 0
                       ? WeightPointer(
@@ -90,10 +82,7 @@ class VerticalWeightSlider extends StatelessWidget {
                 ),
               ),
               onSelectedItemChanged: (index) {
-                onChanged(
-                  (index / controller.getIntervalToInt()) +
-                      controller.minWeight,
-                );
+                onChanged(selectedWeight(index));
                 haptic.run();
               },
             ),
