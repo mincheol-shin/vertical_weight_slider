@@ -1,3 +1,8 @@
+## 2.6.0
+
+* Add support for inches unit of measurement. Thanks @desmeit. (#8)
+* Improve UI logic for displaying tick marks and enhance rendering performance. Thanks @trevorFields. (#9)
+
 ## 2.5.1
 
 * Added `diameterRatio` attribute.
