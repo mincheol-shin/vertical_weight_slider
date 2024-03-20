@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vertical_weight_slider/src/extensions/haptic_extension.dart';
 import 'package:vertical_weight_slider/src/widgets/weight_pointer.dart';
 
 import '../vertical_weight_slider.dart';

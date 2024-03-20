@@ -1,13 +1,6 @@
 import 'package:flutter/services.dart';
 
-enum Haptic {
-  none,
-  vibrate,
-  lightImpact,
-  mediumImpact,
-  heavyImpact,
-  selectionClick,
-}
+import '../models/haptic.dart';
 
 extension HapticExtension on Haptic {
   Future<void> run() async {
