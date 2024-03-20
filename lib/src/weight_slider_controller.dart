@@ -14,7 +14,8 @@ class WeightSliderController extends FixedExtentScrollController {
         assert(itemExtent >= 0),
         assert(interval <= 1.0),
         super(
-          initialItem: ((initialWeight - minWeight) * (1 * (1 / interval))).toInt(),
+          initialItem:
+              ((initialWeight - minWeight) * (1 * (1 / interval))).toInt(),
         );
 
   /// The page to show when first creating the scroll view.

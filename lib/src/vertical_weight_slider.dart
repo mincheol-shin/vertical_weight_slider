@@ -70,24 +70,30 @@ class VerticalWeightSlider extends StatelessWidget {
                     i
                 ].length,
                 (index) => Center(
-                    child: index % 10 == 0
-                        ? WeightPointer(
-                            color: decoration.largeColor,
-                            width: decoration.width,
-                            height: decoration.height)
-                        : index % 5 == 0
-                            ? WeightPointer(
-                                color: decoration.mediumColor,
-                                width: decoration.width - decoration.gap,
-                                height: decoration.height - 1)
-                            : WeightPointer(
-                                color: decoration.smallColor,
-                                width: decoration.width - (decoration.gap * 2),
-                                height: decoration.height - 1)),
+                  child: index % 10 == 0
+                      ? WeightPointer(
+                          color: decoration.largeColor,
+                          width: decoration.width,
+                          height: decoration.height,
+                        )
+                      : index % 5 == 0
+                          ? WeightPointer(
+                              color: decoration.mediumColor,
+                              width: decoration.width - decoration.gap,
+                              height: decoration.height - 1,
+                            )
+                          : WeightPointer(
+                              color: decoration.smallColor,
+                              width: decoration.width - (decoration.gap * 2),
+                              height: decoration.height - 1,
+                            ),
+                ),
               ),
               onSelectedItemChanged: (index) {
-                onChanged((index / controller.getIntervalToInt()) +
-                    controller.minWeight);
+                onChanged(
+                  (index / controller.getIntervalToInt()) +
+                      controller.minWeight,
+                );
                 haptic.run();
               },
             ),

@@ -18,7 +18,8 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    _controller = WeightSliderController(initialWeight: _weight, minWeight: 0, interval: 0.1);
+    _controller = WeightSliderController(
+        initialWeight: _weight, minWeight: 0, interval: 0.1);
   }
 
   @override

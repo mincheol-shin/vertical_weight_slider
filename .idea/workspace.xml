@@ -23,12 +23,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aae96d79-dcbd-44e2-8d7b-88b288eeeeca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/src/extensions/haptic_extension.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/models/haptic.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/vertical_weight_slider_constants.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/vertical_weight_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/vertical_weight_slider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/vertical_weight_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/vertical_weight_slider.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +47,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="1n15QKjQrpHLFw8vLc6w8SPaFYX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -68,6 +64,7 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "dev",
+    "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/mac/vertical_weight_slider",
     "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
     "show.migrate.to.gradle.popup": "false"
