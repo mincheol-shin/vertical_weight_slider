@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vertical_weight_slider/src/extensions/haptic_extension.dart';
 import 'package:vertical_weight_slider/src/widgets/weight_pointer.dart';
 
 import '../vertical_weight_slider.dart';
@@ -15,6 +14,7 @@ class VerticalWeightSlider extends StatelessWidget {
     this.isVertical = true,
     this.haptic = Haptic.none,
     this.diameterRatio = 3.0,
+    this.unit = MeasurementUnit.kg,
   }) : super(key: key);
 
   /// A controller for scroll views whose items have the same size.
@@ -41,6 +41,8 @@ class VerticalWeightSlider extends StatelessWidget {
   /// A ratio between the diameter of the cylinder and the viewport's size in the main axis.
   final double diameterRatio;
 
+  final MeasurementUnit unit;
+
   double selectedWeight(int index) =>
       controller.minWeight + (index * controller.interval);
 
@@ -62,14 +64,14 @@ class VerticalWeightSlider extends StatelessWidget {
               childDelegate: ListWheelChildBuilderDelegate(
                 childCount: controller.markCount,
                 builder: (context, index) {
-                  if (index % 10 == 0) {
+                  if (index % unit.largePointerIndex == 0) {
                     return WeightPointer(
                       color: decoration.largeColor,
                       width: decoration.width,
                       height: decoration.height,
                     );
                   }
-                  if (index % 5 == 0) {
+                  if (index % unit.mediumPointerIndex == 0) {
                     return WeightPointer(
                       color: decoration.mediumColor,
                       width: decoration.width - decoration.gap,
