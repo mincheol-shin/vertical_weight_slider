@@ -53,33 +53,35 @@ class VerticalWeightSlider extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-            ListWheelScrollView(
+            ListWheelScrollView.useDelegate(
               itemExtent: controller.itemExtent,
               diameterRatio: diameterRatio,
               controller: controller,
               physics: const FixedExtentScrollPhysics(),
               perspective: 0.01,
-              children: List<Widget>.generate(
-                controller.markCount,
-                (index) => Center(
-                  child: index % 10 == 0
-                      ? WeightPointer(
-                          color: decoration.largeColor,
-                          width: decoration.width,
-                          height: decoration.height,
-                        )
-                      : index % 5 == 0
-                          ? WeightPointer(
-                              color: decoration.mediumColor,
-                              width: decoration.width - decoration.gap,
-                              height: decoration.height - 1,
-                            )
-                          : WeightPointer(
-                              color: decoration.smallColor,
-                              width: decoration.width - (decoration.gap * 2),
-                              height: decoration.height - 1,
-                            ),
-                ),
+              childDelegate: ListWheelChildBuilderDelegate(
+                childCount: controller.markCount,
+                builder: (context, index) {
+                  if (index % 10 == 0) {
+                    return WeightPointer(
+                      color: decoration.largeColor,
+                      width: decoration.width,
+                      height: decoration.height,
+                    );
+                  }
+                  if (index % 5 == 0) {
+                    return WeightPointer(
+                      color: decoration.mediumColor,
+                      width: decoration.width - decoration.gap,
+                      height: decoration.height - 1,
+                    );
+                  }
+                  return WeightPointer(
+                    color: decoration.smallColor,
+                    width: decoration.width - (decoration.gap * 2),
+                    height: decoration.height - 1,
+                  );
+                },
               ),
               onSelectedItemChanged: (index) {
                 onChanged(selectedWeight(index));
